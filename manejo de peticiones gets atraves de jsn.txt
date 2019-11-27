@@ -1,0 +1,28 @@
+mostrar los datos atraves de una peticion get se pone el nombre del controlador y del valor que se quiere mostrar ejemplo
+http://localhost:8080/doctores/all
+
+el navegador muestra
+[{"id":1,"nombre":"rony","direccion":"cds"},{"id":2,"nombre":"juan","direccion":"ahuacha"}]
+
+guardar nuevos registros atraves d ela peticion get
+http://localhost:8080/doctores/save?nombre=elmer&direccion=ataco
+
+el navegador muestra
+
+{"estado":"OK","mensaje":"Registro guardado"}
+
+eliminar registros atraves d ela peticion get
+
+http://localhost:8080/doctores/delete/2
+
+el navegador muestra
+
+{"estado":"OK","mensaje":"Registro eliminado"}
+
+actualizar  registros atraves d ela peticion get
+
+http://localhost:8080/doctores/update/1?id=1&nombre=prueba&direccion=cdsss
+
+el navegador muestra
+
+{"estado":"OK","mensaje":"Registro actualizado"}
