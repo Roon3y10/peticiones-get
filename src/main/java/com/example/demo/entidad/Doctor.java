@@ -1,9 +1,12 @@
 package com.example.demo.entidad;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Doctor {
@@ -13,7 +16,10 @@ public class Doctor {
 	private Integer id;
 	private String nombre;
 	private String direccion;
-
+    
+	@ManyToOne(fetch =FetchType.EAGER)
+	@NotNull
+	private Especialidad especialidad;
 	// constructores//
 	public Doctor() {
 
@@ -48,6 +54,14 @@ public class Doctor {
 
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
+	}
+
+	public Especialidad getEspecialidad() {
+		return especialidad;
+	}
+
+	public void setEspecialidad(Especialidad especialidad) {
+		this.especialidad = especialidad;
 	}
 
 }
