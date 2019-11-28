@@ -7,8 +7,10 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.entidad.Consulta;
 import com.example.demo.entidad.Doctor;
+import com.example.demo.entidad.Paciente;
 import com.example.demo.repositorio.IConsultaRepository;
 import com.example.demo.repositorio.IDoctorRepository;
+import com.example.demo.repositorio.IPacienteRepository;
 
 @Service
 public class ConsultaService {
@@ -18,6 +20,9 @@ public class ConsultaService {
 	
 	@Autowired
 	IConsultaRepository rconsulta;
+	
+	@Autowired
+	IPacienteRepository rpaciente;
 	
 	public List<Consulta> getAll(){
 		return (List<Consulta>) rconsulta.findAll();
@@ -49,5 +54,8 @@ public class ConsultaService {
 
 	public Doctor getDoctor(Integer id) {
 		return rdoctor.findById(id).get();
-	}	
+	}
+	public Paciente getPaciente(Integer id) {
+		return rpaciente.findById(id).get();
+	}
 }

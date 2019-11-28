@@ -1,6 +1,5 @@
 package com.example.demo.entidad;
 
-
 import java.sql.Date;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -23,16 +23,23 @@ public class Consulta {
 	@NotNull
 	private Doctor doctor;
 
+	@ManyToOne(fetch = FetchType.EAGER)
+	@NotNull
+	private Paciente paciente;
+
 //constructores//
 	public Consulta() {
 	}
 
-	public Consulta(Date fecha, String sintomas, String diagnostico, @NotNull Doctor doctor) {
+	public Consulta(Integer id, Date fecha, String sintomas, String diagnostico, @NotNull Doctor doctor,
+			@NotNull Paciente paciente) {
 		super();
+		this.id = id;
 		this.fecha = fecha;
 		this.sintomas = sintomas;
 		this.diagnostico = diagnostico;
 		this.doctor = doctor;
+		this.paciente = paciente;
 	}
 
 //sets y gets//
@@ -74,6 +81,14 @@ public class Consulta {
 
 	public void setDoctor(Doctor doctor) {
 		this.doctor = doctor;
+	}
+
+	public Paciente getPaciente() {
+		return paciente;
+	}
+
+	public void setPaciente(Paciente paciente) {
+		this.paciente = paciente;
 	}
 
 }

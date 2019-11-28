@@ -31,7 +31,7 @@ public class EspecialidadController {
 	@GetMapping(value = "save")
 	@ResponseBody
 	public HashMap<String, String> save(@RequestParam String especialidad) {
-		Especialidad es = new Especialidad();// creando objeto de doctor
+		Especialidad es = new Especialidad();// creando objeto de especialidad
 
 		HashMap<String, String> jsonReturn = new HashMap<>();
 		// asignado datos al objeto de especialidad
