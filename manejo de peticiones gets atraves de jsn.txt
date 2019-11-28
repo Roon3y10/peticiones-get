@@ -3,14 +3,14 @@ http://localhost:8080/doctores/all
 
 el navegador muestra
 [{"id":1,"nombre":"rony","direccion":"cds"},{"id":2,"nombre":"juan","direccion":"ahuacha"}]
-
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
 guardar nuevos registros atraves d ela peticion get
 http://localhost:8080/doctores/save?nombre=elmer&direccion=ataco
 
 el navegador muestra
 
 {"estado":"OK","mensaje":"Registro guardado"}
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 eliminar registros atraves d ela peticion get
 
 http://localhost:8080/doctores/delete/2
@@ -18,7 +18,7 @@ http://localhost:8080/doctores/delete/2
 el navegador muestra
 
 {"estado":"OK","mensaje":"Registro eliminado"}
-
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 actualizar  registros atraves d ela peticion get
 
 http://localhost:8080/doctores/update/1?id=1&nombre=prueba&direccion=cdsss
@@ -26,3 +26,15 @@ http://localhost:8080/doctores/update/1?id=1&nombre=prueba&direccion=cdsss
 el navegador muestra
 
 {"estado":"OK","mensaje":"Registro actualizado"}
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+actualizar  registros atraves d ela peticion get con la tabla con relacion se siguie el mismo procedimiento y se le agrega el id de la tabla que se quiere actualizar
+
+http://localhost:8080/doctores/update/1?id=1&nombre=osvaldo&direccion=sonsonate&idEspecialidad=2
+
+el navegador muestra
+
+{"estado":"OK","mensaje":"Registro actualizado"}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+agregar nuevos registros atraves d ela peticion get con la tabla con relacion se siguie el mismo procedimiento y se le agrega el id de la tabla que se quiere actualizar (id del doctor)(CONSULTAS)
+http://localhost:8080/consulta/save?fecha=2021-02-05&sintomas=ideas delirantes&diagnostico=psicosis&idDoctor=2
+

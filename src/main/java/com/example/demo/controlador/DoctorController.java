@@ -34,13 +34,14 @@ public class DoctorController {
 	// METODOD ALMACENAR ELEMENTOS COMO UNA ARREGLO//
 	@GetMapping(value = "save")
 	@ResponseBody
-	public HashMap<String, String> save(@RequestParam String nombre,
-			@RequestParam String direccion, @RequestParam Integer idEspecialidad) {
+	public HashMap<String, String> save(
+			@RequestParam String nombre,
+			@RequestParam String direccion,
+			@RequestParam Integer idEspecialidad) {
 		Doctor doctor = new Doctor();// se crea el objeto doctor
 
 		HashMap<String, String> jsonReturn = new HashMap<>();
 		// asignado datos al objeto de doctor
-
 		doctor.setNombre(nombre);
 		doctor.setDireccion(direccion);
 		doctor.setEspecialidad(doctorService.getEspecialidad(idEspecialidad));
@@ -86,8 +87,11 @@ public class DoctorController {
 //actualizar
 	@GetMapping(value = "update/{id}")
 	@ResponseBody
-	public HashMap<String, String> update( @RequestParam Integer id, @RequestParam String nombre,
-			@RequestParam String direccion, @RequestParam Integer idEspecialidad) {
+	public HashMap<String, String> update( 
+			@RequestParam Integer id,
+			@RequestParam String nombre,
+			@RequestParam String direccion,
+			@RequestParam Integer idEspecialidad) {
 		Doctor doctor = new Doctor();// creando objeto de doctor
 
 		HashMap<String, String> jsonReturn = new HashMap<>();
