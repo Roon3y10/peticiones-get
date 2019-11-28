@@ -98,7 +98,7 @@ public class ConsultaController {
 			co.setDiagnostico(diagnostico);
 			co.setDoctor(consultaService.getDoctor(idDoctor));
 
-			// manejando cualquier excepcion de error
+			// manejando cualquier excepcion de error de la peticion
 			try {
 				consultaService.SaveOrUpate(co);// guardando registro de doctor
 				jsonReturn.put("estado", "OK");
