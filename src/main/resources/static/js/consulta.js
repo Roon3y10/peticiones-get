@@ -16,7 +16,7 @@ function inicio(){
                     // a la tabla, a su tbody
                     // resetear datos de la tabla
                     $("#tdatos").html("");
-                    // se recorren los elementos del array
+                    // se recorren los elementos del arrays
                     // retornado como respuesta
          for (let i = 0; i < response.length; i++) {
                             
