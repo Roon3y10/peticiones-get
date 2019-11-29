@@ -24,6 +24,10 @@ function cargarDatos() {
 				$("#tdatos").append(
 						"" + "<tr>" + "<td>" + response[i].id + "</td>"
 								+ "<td>" + response[i].especialidad + "</td>"
+								+"<td>"
+                                +"<button onclick='cargarRegistro("+response[i].id+")'  type='button' class='btn btn-warning ml-4 mt-1' data-toggle='modal' data-target='#editar'>Editar</button>"
+                                +"<button onclick='setIdPersona("+response[i].id+");' type='button' class='btn btn-danger ml-4 mt-1' data-toggle='modal' data-target='#eliminar'>Eliminar</button>"
+                            +"</td>"
 								+ "</tr>");
 
 			}

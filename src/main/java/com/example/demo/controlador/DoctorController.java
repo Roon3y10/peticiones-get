@@ -24,6 +24,11 @@ public class DoctorController {
 	// repositorio para manipular los datos de la base//
 	@Autowired
 	DoctorService doctorService;
+	
+	@GetMapping(value="index")
+    public String index() {
+        return new String("views/Doctor/doctor");
+    }
 
 	@GetMapping(value = "all", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody

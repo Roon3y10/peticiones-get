@@ -24,6 +24,11 @@ public class ConsultaController {
 	@Autowired
 	ConsultaService consultaService;
 	
+	@GetMapping(value="index")
+    public String index() {
+        return new String("views/Consulta/consulta");
+    }
+	
 	@GetMapping(value = "all", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public List<Consulta>getAllConsultas(){

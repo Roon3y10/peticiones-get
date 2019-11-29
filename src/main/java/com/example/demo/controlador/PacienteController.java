@@ -20,6 +20,12 @@ import com.example.demo.repositorio.IPacienteRepository;
 public class PacienteController {
 	@Autowired
 	IPacienteRepository rpaciente;
+	
+	@GetMapping(value="index")
+    public String index() {
+        return new String("views/Paciente/paciente");
+    }
+
 
 	@GetMapping(value = "all", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
