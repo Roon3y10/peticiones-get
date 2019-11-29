@@ -22,6 +22,11 @@ public class EspecialidadController {
 	@Autowired
 	IEspecialidadRepository respecialidad;
 
+	@GetMapping(value="index")
+    public String index() {
+        return new String("views/Especialidad/especialidad");
+    }
+	
 	@GetMapping(value = "all", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public List<Especialidad> getAll() {
